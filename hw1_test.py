@@ -1,23 +1,29 @@
 import data
 import hw1
 import unittest
-class TestCases(unittest.TestCase):
 
 # Write your test cases for each part below.
 
-    def find_vowels(sentence):
-     count = 0
-     vowels = "aeiouAEIOU"
-     for letter in sentence:
-            if letter in vowels:
-                count += 1
+def vowel_count(str) -> int:
+    count = 0
+    vowels = "aeiouAEIOU"
+    for letter in str:
+        if letter in vowels:
+            count += 1
+    return count
+print(vowel_count("Good"))
+print(vowel_count("crypt"))
 
-
-
-
-
-        # Part 2
-
+    # Part 2
+def short_lists(my_list, n) -> list[list[int]]:
+    result = []
+    sublist_size = len(my_list) // n
+    for i in range(0, len(my_list), sublist_size):
+        result.append(my_list[i:i + sublist_size])
+    return result
+my_list = []
+print(short_lists([23,43,56,12,3,10,78], 2))
+print(short_lists([0,-3,9,2,10,7,-1], 2))
 
     # Part 3
 

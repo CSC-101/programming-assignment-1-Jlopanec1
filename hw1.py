@@ -8,6 +8,15 @@ import data
 #output: int
 #example = ["ever"]
 #result = 2
+def vowel_count(str) -> int:
+    count = 0
+    vowels = "aeiouAEIOU"
+    for letter in str:
+        if letter in vowels:
+            count += 1
+    return count
+print(vowel_count("Hello"))
+
 
 # Part 2
 #Purpose: turn a lists of lists into smaller lists with a length of 2
@@ -15,6 +24,15 @@ import data
 #output: list[list[int]]
 #example = ([1,2,3], [4,5,6]
 # #result = [1,2],[3,4],[5,6]
+def short_lists(list, n) -> list[list[int]]:
+    result = []
+    sublist_size = len(list) // n
+    for i in range(0, len(list), sublist_size):
+        result.append(list[i:i + sublist_size])
+    return result
+my_list = [1, 2, 3, 4, 5, 6]
+print(short_lists(my_list, 2))
+
 
 
 # Part 3
